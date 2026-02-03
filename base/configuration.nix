@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  name = "nixtcloud";
+  name = "ari-nixtcloud";
 in
 {
   imports =
@@ -11,8 +11,8 @@ in
   networking.hostName = name; 
   
   #### You can define your wireless network here if you don't want to use ethernet cable.
-  #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  #networking.wireless.networks = { SSID = { psk = "pass"; };  };
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.wireless.networks = { "EYEKANDI HOME" = { psk = "koVert2017"; };  };
 
   # Set your time zone.
   time.timeZone = "auto";
@@ -64,7 +64,7 @@ in
   #######################################################################################################
 
   ### DO NOT CHANGE the username. After the system is installed, you can change the password with 'passwd' command.
-   users.users.admin = {
+   users.users.win = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
      initialPassword = "admin";
@@ -97,7 +97,7 @@ in
   ########## SSH & Security ##########
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "no";
-  #users.users.admin.openssh.authorizedKeys.keys = [ "your key here"];
+  users.users.admin.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPYMsWNLPImIoLmOdtfS3Dw92/0PE1jTp6M/uTr9L2SI natthapongxch67@gmail.com" ];
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 80 443 ];

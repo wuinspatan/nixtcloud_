@@ -111,7 +111,7 @@ in
   ########## SSH & Security ##########
   services.openssh.enable = true;
   services.openssh.settings.PermitRootLogin = "no";
-  users.users.admin.openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPYMsWNLPImIoLmOdtfS3Dw92/0PE1jTp6M/uTr9L2SI natthapongxch67@gmail.com" ];
+  #users.users.admin.openssh.authorizedKeys.keys = [ "" ];
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 80 443 ];

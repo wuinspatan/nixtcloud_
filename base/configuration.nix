@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  name = "ari-nixtcloud";
+  name = "nixtcloud";
 in
 {
   imports =
